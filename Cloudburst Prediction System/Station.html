@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Station Selector</title>
+</head>
+<body>
+    <h1>Weather Station Selector</h1>
+
+    <form id="districtForm">
+        <label for="district">Select District:</label>
+        <select id="district" name="district">
+            <option value="district1">District 1</option>
+            <option value="district2">District 2</option>
+            <!-- Add more district options as needed -->
+        </select>
+    </form>
+
+    <form id="stationForm">
+        <label for="selectedDistrict">Selected District:</label>
+        <input type="text" id="selectedDistrict" name="selectedDistrict" readonly>
+        <label for="weatherStation">Weather Station:</label>
+        <input type="text" id="weatherStation" name="weatherStation" readonly>
+    </form>
+
+    <script>
+        const districtSelect = document.getElementById("district");
+        const selectedDistrictInput = document.getElementById("selectedDistrict");
+        const weatherStationInput = document.getElementById("weatherStation");
+
+        // Define a mapping of district to weather station
+        const districtToWeatherStation = {
+            "district1": "stationA",
+            "district2": "stationB",
+            // Add more district-station mappings as needed
+        };
+
+        // Add an event listener to the district select field
+        districtSelect.addEventListener("change", () => {
+            const selectedDistrict = districtSelect.value;
+            const weatherStation = districtToWeatherStation[selectedDistrict];
+            if (weatherStation) {
+                // If a matching weather station is found, update the inputs
+                selectedDistrictInput.value = selectedDistrict;
+                weatherStationInput.value = weatherStation;
+            } else {
+                // If no matching weather station is found, clear the inputs
+                selectedDistrictInput.value = "";
+                weatherStationInput.value = "";
+            }
+        });
+    </script>
+</body>
+</html>

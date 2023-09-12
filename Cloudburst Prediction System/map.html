@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uttarakhand Map</title>
+    <link rel="stylesheet" href="map.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <h1>Map of Uttarakhand, India</h1>
+    </header>
+    <div class="map-container">
+        <div id="map"></div>
+    </div>
+    <div class="location-form">
+        <form id="location-form">
+            <label for="district">Select District:</label>
+            <select id="district">
+                <option value="Dehradun">Dehradun</option> <!-- Added Dehradun as a district -->
+                <!-- Add other district options here -->
+            </select>
+            <label for="station">Select Station:</label>
+            <select id="station">
+                <option value="Mussoorie">Mussoorie</option> <!-- Added Mussoorie as a station -->
+                <!-- Add other station options here -->
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
